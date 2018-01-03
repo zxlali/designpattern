@@ -42,8 +42,7 @@ public class FundAnalyseTool {
 
     public static BigDecimal analyse_1(List<FundNetValue> netValues) {
         BigDecimal max = netValues.get(0).getNetValue();
-        BigDecimal minRate =
-            netValues.get(1).getNetValue().divide(max, 4, BigDecimal.ROUND_HALF_UP);
+        BigDecimal minRate = BigDecimal.ONE;
         for (int i = 1; i < netValues.size(); i++) {
             if (netValues.get(i).getNetValue().compareTo(max) > 0) {
                 max = netValues.get(i).getNetValue();
